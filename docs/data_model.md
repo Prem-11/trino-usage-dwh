@@ -10,18 +10,18 @@ The model has 3 layers:
 
 ## Layer 1: Raw
 
-### raw_query_events
-**Grain:** 1 row per event received.
+### raw.query_events
+**Grain:** 1 row per event received (source duplicates are kept).
 
 | Column | Description |
 |---|---|
-| event_id | unique id of the received event |
-| query_id | Trino query id |
+| ingest_date | S3 folder date, i.e. when the event arrived |
+| query_id | Trino query id, used for deduplication in core |
 | payload | full QueryCompletedEvent as JSON |
-| event_date | date partition (UTC, from query end time) |
 | loaded_at | when the row was loaded |
 
 Purpose: source of truth. If transformation logic changes, all core and mart tables can be rebuilt from here.
+Note: ingest_date can differ from the query date because events can arrive late.
 
 ## Layer 2: Core
 
@@ -36,6 +36,7 @@ Purpose: source of truth. If transformation logic changes, all core and mart tab
 | team_id | user's team at query time |
 | source | client tool (jupyter, superset, airflow, ...) |
 | query_state | FINISHED / FAILED |
+| error_code | failure reason, NULL if the query finished |
 | start_time, end_time | query timestamps |
 | cpu_time_ms | total CPU time |
 | wall_time_ms | elapsed time |
@@ -66,7 +67,7 @@ Columns: team_id (PK), team_name, department
 
 ### dim_user
 **Grain:** 1 row per user.
-Columns: user_name (PK), email, is_service_account, first_seen_date
+Columns: user_name (PK), email, is_service_account
 
 ### bridge_user_team (SCD Type 2)
 **Grain:** 1 row per user × team × validity period.
