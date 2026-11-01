@@ -20,3 +20,7 @@
 8. Failed queries are kept (they consumed resources) and flagged.
 9. Queries on system / information_schema tables are excluded from table usage.
 10. Events can arrive late, so each daily run reprocesses the last 3 days.
+11. Events can be delivered more than once (event listener retries).
+    Duplicates are kept in raw and removed in core by query_id, keeping the first arrival.
+12. Raw stores the arrival date (ingest_date), not the query date. The query date is taken
+    from the event's endTime when building core tables.
