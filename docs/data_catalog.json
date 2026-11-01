@@ -1,0 +1,384 @@
+{
+  "tables": [
+    {
+      "table_id": "iceberg.platform.table_sizes",
+      "description": "Daily size of every Iceberg table",
+      "owner_team_id": "data_platform",
+      "queries_30d": 587,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.events.ide_sessions",
+        "iceberg.platform.ingestion_log",
+        "iceberg.sales.orders"
+      ],
+      "status": "active",
+      "popularity_rank": 1
+    },
+    {
+      "table_id": "iceberg.analytics.daily_active_users",
+      "description": "Daily active users per product",
+      "owner_team_id": "analytics",
+      "queries_30d": 538,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.analytics.product_kpis",
+        "iceberg.analytics.retention_cohorts",
+        "iceberg.events.plugin_installs"
+      ],
+      "status": "active",
+      "popularity_rank": 2
+    },
+    {
+      "table_id": "iceberg.analytics.product_kpis",
+      "description": "Daily KPI values per product",
+      "owner_team_id": "analytics",
+      "queries_30d": 537,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.analytics.retention_cohorts",
+        "iceberg.analytics.daily_active_users",
+        "iceberg.events.plugin_installs"
+      ],
+      "status": "active",
+      "popularity_rank": 3
+    },
+    {
+      "table_id": "iceberg.platform.ingestion_log",
+      "description": "One row per ingestion job run",
+      "owner_team_id": "data_platform",
+      "queries_30d": 524,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.platform.table_sizes",
+        "iceberg.events.ide_sessions",
+        "iceberg.analytics.retention_cohorts"
+      ],
+      "status": "active",
+      "popularity_rank": 4
+    },
+    {
+      "table_id": "iceberg.sales.refunds",
+      "description": "One row per refund",
+      "owner_team_id": "finance",
+      "queries_30d": 510,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.analytics.retention_cohorts",
+        "iceberg.platform.table_sizes",
+        "iceberg.events.plugin_installs"
+      ],
+      "status": "active",
+      "popularity_rank": 5
+    },
+    {
+      "table_id": "iceberg.events.plugin_installs",
+      "description": "One row per plugin install or uninstall",
+      "owner_team_id": "product",
+      "queries_30d": 504,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.analytics.daily_active_users",
+        "iceberg.analytics.product_kpis",
+        "iceberg.events.feature_usage"
+      ],
+      "status": "active",
+      "popularity_rank": 6
+    },
+    {
+      "table_id": "iceberg.analytics.retention_cohorts",
+      "description": "User retention by signup cohort",
+      "owner_team_id": "analytics",
+      "queries_30d": 501,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.analytics.product_kpis",
+        "iceberg.analytics.daily_active_users",
+        "iceberg.sales.refunds"
+      ],
+      "status": "active",
+      "popularity_rank": 7
+    },
+    {
+      "table_id": "iceberg.marketing.campaigns",
+      "description": "One row per marketing campaign",
+      "owner_team_id": "marketing",
+      "queries_30d": 498,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.marketing.web_visits",
+        "iceberg.marketing.email_events",
+        "iceberg.sales.licenses"
+      ],
+      "status": "active",
+      "popularity_rank": 8
+    },
+    {
+      "table_id": "iceberg.events.feature_usage",
+      "description": "One row per feature usage event in an IDE",
+      "owner_team_id": "product",
+      "queries_30d": 494,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.analytics.product_kpis",
+        "iceberg.events.plugin_installs",
+        "iceberg.events.ide_sessions"
+      ],
+      "status": "active",
+      "popularity_rank": 9
+    },
+    {
+      "table_id": "iceberg.marketing.email_events",
+      "description": "One row per email send, open or click",
+      "owner_team_id": "marketing",
+      "queries_30d": 493,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.sales.licenses",
+        "iceberg.marketing.campaigns",
+        "iceberg.analytics.product_kpis"
+      ],
+      "status": "active",
+      "popularity_rank": 10
+    },
+    {
+      "table_id": "iceberg.sales.licenses",
+      "description": "One row per active or expired license",
+      "owner_team_id": "finance",
+      "queries_30d": 491,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.sales.orders",
+        "iceberg.marketing.email_events",
+        "iceberg.sales.customers"
+      ],
+      "status": "active",
+      "popularity_rank": 11
+    },
+    {
+      "table_id": "iceberg.marketing.web_visits",
+      "description": "One row per website visit",
+      "owner_team_id": "marketing",
+      "queries_30d": 476,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.marketing.campaigns",
+        "iceberg.analytics.daily_active_users",
+        "iceberg.analytics.retention_cohorts"
+      ],
+      "status": "active",
+      "popularity_rank": 12
+    },
+    {
+      "table_id": "iceberg.sales.orders",
+      "description": "One row per license order",
+      "owner_team_id": "finance",
+      "queries_30d": 471,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.sales.licenses",
+        "iceberg.platform.table_sizes",
+        "iceberg.sales.refunds"
+      ],
+      "status": "active",
+      "popularity_rank": 13
+    },
+    {
+      "table_id": "iceberg.events.ide_sessions",
+      "description": "One row per IDE session with product, version and duration",
+      "owner_team_id": "product",
+      "queries_30d": 469,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.platform.table_sizes",
+        "iceberg.platform.ingestion_log",
+        "iceberg.events.crash_reports"
+      ],
+      "status": "active",
+      "popularity_rank": 14
+    },
+    {
+      "table_id": "iceberg.events.crash_reports",
+      "description": "One row per IDE crash report",
+      "owner_team_id": "product",
+      "queries_30d": 468,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.events.ide_sessions",
+        "iceberg.events.feature_usage",
+        "iceberg.platform.table_sizes"
+      ],
+      "status": "active",
+      "popularity_rank": 15
+    },
+    {
+      "table_id": "iceberg.sales.customers",
+      "description": "One row per customer account",
+      "owner_team_id": "finance",
+      "queries_30d": 457,
+      "distinct_users_30d": 28,
+      "used_by_teams": [
+        "analytics",
+        "data_platform",
+        "finance",
+        "marketing",
+        "product",
+        "unassigned"
+      ],
+      "last_queried_date": "2026-10-30",
+      "often_queried_with": [
+        "iceberg.analytics.retention_cohorts",
+        "iceberg.sales.licenses",
+        "iceberg.sales.refunds"
+      ],
+      "status": "active",
+      "popularity_rank": 16
+    },
+    {
+      "table_id": "iceberg.legacy.campaigns_2019",
+      "description": "Old 2019 campaign data, kept for reference",
+      "owner_team_id": "marketing",
+      "queries_30d": 0,
+      "distinct_users_30d": 0,
+      "used_by_teams": [],
+      "last_queried_date": null,
+      "often_queried_with": [],
+      "status": "cold",
+      "popularity_rank": 17
+    }
+  ]
+}
